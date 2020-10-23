@@ -1,10 +1,13 @@
 package polytech.covidalert.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name="users")
 @Access(AccessType.FIELD)
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.gson.GsonProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import polytech.covidalert.models.User;
 import polytech.covidalert.models.UserRepository;
 
@@ -17,13 +18,15 @@ public class UserController {
 
     @GetMapping
     public List<User> list() {
-        System.out.println("enter here");
         return userRepository.findAll();
     }
 
     @GetMapping
     @RequestMapping("{id}")
     public User get(@PathVariable Long id) {
+        if (! userRepository.findById(id).isPresent()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " +id+ " not found.");
+        }
         return userRepository.getOne(id);
     }
 
