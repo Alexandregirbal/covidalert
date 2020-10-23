@@ -1,6 +1,7 @@
 package polytech.covidalert.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.gson.GsonProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import polytech.covidalert.models.User;
@@ -16,6 +17,7 @@ public class UserController {
 
     @GetMapping
     public List<User> list() {
+        System.out.println("enter here");
         return userRepository.findAll();
     }
 
