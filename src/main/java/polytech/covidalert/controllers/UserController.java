@@ -11,7 +11,7 @@ import polytech.covidalert.models.UserRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/covidalert/api/users")
 public class UserController {
     @Autowired
     private UserRepository userRepository;

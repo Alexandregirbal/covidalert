@@ -10,7 +10,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/covidalert/api/")
 public class HomeController {
     @Value("${app.version}")
     private String appVersion;
