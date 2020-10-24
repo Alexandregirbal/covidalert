@@ -17,7 +17,6 @@ public class HomeController {
 
     @GetMapping
     public String versionApp() {
-        System.out.println("TEST"+appVersion);
         return appVersion;
     }
 

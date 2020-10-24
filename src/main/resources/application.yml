@@ -3,3 +3,14 @@ server :
 
 app :
   version : "1.0.0"
+
+spring :
+  datasource :
+    url : ${DB_URL}
+    username : ${DB_USER}
+    password : ${DB_PASSWORD}
+  jpa :
+    database-platform : org.hibernate.dialect.PostgreSQLDialect
+    hibernate :
+      ddl-auto : none
+      show-sql : true
