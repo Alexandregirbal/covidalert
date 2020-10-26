@@ -61,4 +61,12 @@ public class User {
             inverseJoinColumns=@JoinColumn(name="location_id")
     )
     private List<Location> locations;
+
+    // Liste des tests effectués par les users
+    @OneToMany(mappedBy = "user")
+    private List<DoTest> listTest;
+
+    // Liste des Covids positifs
+    @OneToMany(mappedBy = "user")
+    private List<HaveCovid> listCovided;
 }
