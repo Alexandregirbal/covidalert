@@ -18,12 +18,7 @@ public class Test {
     @OneToMany(mappedBy = "test")
     private List<DoTest> listTest;
 
-    public Test(long test_id, String type, String label, List<DoTest> listTest) {
-        this.test_id = test_id;
-        this.type = type;
-        this.label = label;
-        this.listTest = listTest;
-    }
+
 
     public long getTest_id() {
         return test_id;

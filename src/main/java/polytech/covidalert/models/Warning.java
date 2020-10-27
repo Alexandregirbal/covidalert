@@ -1,6 +1,7 @@
 package polytech.covidalert.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name="warning")
 @Access(AccessType.FIELD)
@@ -10,10 +11,15 @@ public class Warning {
     private long warning_id;
     private String type;
 
-    public Warning(long warning_id, String type, String label) {
-        this.warning_id = warning_id;
-        this.type = type;
-        this.label = label;
+    @OneToMany(mappedBy = "warning")
+    private List<SendWarning> listWarning;
+
+    public List<SendWarning> getListWarning() {
+        return listWarning;
+    }
+
+    public void setListWarning(List<SendWarning> listWarning) {
+        this.listWarning = listWarning;
     }
 
     public long getWarning_id() {
