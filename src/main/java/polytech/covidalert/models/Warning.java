@@ -10,6 +10,12 @@ public class Warning {
     private long warning_id;
     private String type;
 
+    public Warning(long warning_id, String type, String label) {
+        this.warning_id = warning_id;
+        this.type = type;
+        this.label = label;
+    }
+
     public long getWarning_id() {
         return warning_id;
     }

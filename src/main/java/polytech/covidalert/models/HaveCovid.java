@@ -18,6 +18,14 @@ public class HaveCovid {
     private Date covid_date_begin;
     private int covid_duration;
 
+    public HaveCovid(long have_covid_id, User user, Covid covid, Date covid_date_begin, int covid_duration) {
+        this.have_covid_id = have_covid_id;
+        this.user = user;
+        this.covid = covid;
+        this.covid_date_begin = covid_date_begin;
+        this.covid_duration = covid_duration;
+    }
+
     public long getHave_covid_id() {
         return have_covid_id;
     }

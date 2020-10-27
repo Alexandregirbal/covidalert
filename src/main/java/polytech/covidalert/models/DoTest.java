@@ -18,6 +18,14 @@ public class DoTest {
     private Date test_date;
     private String test_result;
 
+    public DoTest(long do_test_id, User user, Test test, Date test_date, String test_result) {
+        this.do_test_id = do_test_id;
+        this.user = user;
+        this.test = test;
+        this.test_date = test_date;
+        this.test_result = test_result;
+    }
+
     public long getDo_test_id() {
         return do_test_id;
     }
@@ -57,4 +65,5 @@ public class DoTest {
     public void setTest_result(String test_result) {
         this.test_result = test_result;
     }
+
 }

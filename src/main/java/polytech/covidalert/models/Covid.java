@@ -13,6 +13,16 @@ public class Covid {
     private long covid_id;
     private String forme;
     private String detail;
+    // Liste des covids positifs
+    @OneToMany(mappedBy = "covid")
+    private List<HaveCovid> listCovided;
+
+    public Covid(long covid_id, String forme, String detail, List<HaveCovid> listCovided) {
+        this.covid_id = covid_id;
+        this.forme = forme;
+        this.detail = detail;
+        this.listCovided = listCovided;
+    }
 
     public long getCovid_id() {
         return covid_id;
@@ -38,8 +48,6 @@ public class Covid {
         this.detail = detail;
     }
 
-    // Liste des covids positifs
-    @OneToMany(mappedBy = "covid")
-    private List<HaveCovid> listCovided;
+
 
 }

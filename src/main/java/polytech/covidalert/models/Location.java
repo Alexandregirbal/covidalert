@@ -15,6 +15,17 @@ public class Location {
     private float latitude;
     private float longitude;
     private Date location_date;
+    @ManyToMany(mappedBy = "locations")
+    @JsonIgnore
+    private List<User> users;
+
+    public Location(long location_id, float latitude, float longitude, Date location_date, List<User> users) {
+        this.location_id = location_id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.location_date = location_date;
+        this.users = users;
+    }
 
     public float getLatitude() {
         return latitude;
@@ -47,9 +58,7 @@ public class Location {
         this.location_id = location_id;
     }
 
-    @ManyToMany(mappedBy = "locations")
-    @JsonIgnore
-    private List<User> users;
+
 }
 
 

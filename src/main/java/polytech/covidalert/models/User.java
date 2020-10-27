@@ -12,6 +12,30 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private long user_id ;
+    private String first_name;
+    private String last_name;
+    private String email;
+    private String phone_number;
+    private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name="user_locations",
+            joinColumns=@JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="location_id")
+    )
+    private List<Location> locations;
+
+    // Liste des tests effectués par les users
+    @OneToMany(mappedBy = "user")
+    private List<DoTest> listTest;
+
+    // Liste des Covids positifs
+    @OneToMany(mappedBy = "user")
+    private List<HaveCovid> listCovided;
+
+    
+
     public long getUser_id() {
         return user_id;
     }
@@ -48,25 +72,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    private String first_name;
-    private String last_name;
-    private String email;
-    private String phone_number;
-    private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name="user_locations",
-            joinColumns=@JoinColumn(name="user_id"),
-            inverseJoinColumns=@JoinColumn(name="location_id")
-    )
-    private List<Location> locations;
-
-    // Liste des tests effectués par les users
-    @OneToMany(mappedBy = "user")
-    private List<DoTest> listTest;
-
-    // Liste des Covids positifs
-    @OneToMany(mappedBy = "user")
-    private List<HaveCovid> listCovided;
 }
