@@ -34,12 +34,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<HaveCovid> listCovided;
 
-    @OneToMany(mappedBy = "user")
+    /*@OneToMany(mappedBy = "user")
     private List<SendWarning> listWarningSend;
 
     @OneToMany(mappedBy = "user")
     private List<SendWarning> listWarningReceived;
-
+*/
     public List<Location> getLocations() {
         return locations;
     }
@@ -64,7 +64,7 @@ public class User {
         this.listCovided = listCovided;
     }
 
-    public List<SendWarning> getListWarningSend() {
+  /*  public List<SendWarning> getListWarningSend() {
         return listWarningSend;
     }
 
@@ -78,7 +78,7 @@ public class User {
 
     public void setListWarningReceived(List<SendWarning> listWarningReceived) {
         this.listWarningReceived = listWarningReceived;
-    }
+    }*/
 
     public long getUser_id() {
         return user_id;

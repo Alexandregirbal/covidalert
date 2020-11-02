@@ -11,7 +11,7 @@ public class Warning {
     private long warning_id;
     private String type;
 
-    @OneToMany(mappedBy = "warning")
+   /* @OneToMany(mappedBy = "warning")
     private List<SendWarning> listWarning;
 
     public List<SendWarning> getListWarning() {
@@ -20,7 +20,7 @@ public class Warning {
 
     public void setListWarning(List<SendWarning> listWarning) {
         this.listWarning = listWarning;
-    }
+    }*/
 
     public long getWarning_id() {
         return warning_id;

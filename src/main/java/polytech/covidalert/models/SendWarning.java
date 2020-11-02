@@ -1,4 +1,4 @@
-package polytech.covidalert.models;
+/*package polytech.covidalert.models;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -59,4 +59,4 @@ public class SendWarning {
     public void setWarning_date(Date warning_date) {
         this.warning_date = warning_date;
     }
-}
+}*/
